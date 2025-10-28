@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 export const BackgroundRippleEffect = ({
   rows = 8,
   cols = 27,
-  cellSize = 56,
+  cellSize = 56.5,
 }: {
   rows?: number
   cols?: number
@@ -24,8 +24,8 @@ export const BackgroundRippleEffect = ({
       ref={ref}
       className={cn(
         "absolute inset-0 h-full w-full",
-        "[--cell-border-color:#d4af37] [--cell-fill-color:#fef3c7] [--cell-shadow-color:#f59e0b]",
-        "dark:[--cell-border-color:#b8860b] dark:[--cell-fill-color:#78350f] dark:[--cell-shadow-color:#d97706]",
+        "[--cell-border-color:#fbbf24] [--cell-fill-color:#fce7f3] [--cell-shadow-color:#fbcfe8]",
+        "dark:[--cell-border-color:#f59e0b] dark:[--cell-fill-color:#fda4af] dark:[--cell-shadow-color:#f87171]",
       )}
     >
       <div className="relative h-auto w-auto overflow-hidden">
@@ -69,11 +69,11 @@ type CellStyle = React.CSSProperties & {
 
 const DivGrid = ({
   className,
-  rows = 16,
+  rows = 7,
   cols = 30,
   cellSize = 56,
   borderColor = "#3f3f46",
-  fillColor = "rgba(248, 81, 167, 0.8)",
+  fillColor = "rgba(14,165,233,0.3)",
   clickedCell = null,
   onCellClick = () => {},
   interactive = true,
