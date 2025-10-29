@@ -28,27 +28,27 @@ export default function Navbar({ className }: { className?: string }) {
           <MenuItem setActive={setActive} active={active} item="Featured">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
-                title="💎 Necklace"
+                title="💎Necklace"
                 href="/rings/solitaire"
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=150&fit=crop"
+                src="/necklace.png"
                 description="Drape yourself in timeless elegance — where every curve tells a story of grace"
               />
               <ProductItem
-                title="💍 Ring"
+                title="💍Ring"
                 href="/necklaces/gold"
-                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&h=150&fit=crop"
+                src="/rings.png"
                 description="A circle of perfection, crafted to shine with your every moment."
               />
               <ProductItem
-                title="✨ Earrings"
+                title="✨Earrings"
                 href="/earrings/pearl"
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=150&fit=crop"
+                src="/earrings.png"
                 description="Turn every glance into admiration — elegance that whispers luxury."
               />
               <ProductItem
                 title="🪶 Bracelet"
                 href="/bracelets/luxury"
-                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300&h=150&fit=crop"
+                src= '/bracelet.png'
                 description="Wrap your wrist in sophistication — simplicity that speaks volumes"
               />
             </div>
