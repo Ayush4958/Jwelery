@@ -3,7 +3,7 @@
 export default function HeroButtons() {
   return (
     <>
-    <div className="flex flex-col z-10 sm:flex-row items-center justify-center gap-4 sm:gap-6">
+    <div className="flex flex-col z-10 sm:flex-row items-center justify-items-start gap-4 sm:gap-6">
         {/* Primary Button - Explore Collection with Gradient & Glow */}
         <button
           className="group relative px-10 py-4 font-semibold text-lg text-white bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.6),0_0_60px_rgba(245,158,11,0.3)] active:scale-100"
