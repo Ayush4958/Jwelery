@@ -93,8 +93,8 @@ function InfiniteMovingCards({
       </div>
 
       {/* Fade Edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#6B6B47] to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-[#6B6B47] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
 
       <style jsx>{`
         @keyframes scroll {
@@ -123,20 +123,47 @@ function InfiniteMovingCards({
 export default function InfiniteMovingCardsDemo() {
   return (
     <div className="min-h-screen relative flex flex-col antialiased items-center justify-center overflow-hidden p-4 sm:p-8">
-      {/* Animated Gradient Background - Olive/Brown Tones */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6B6B47] via-[#7A7A52] to-[#8B8B5C] animate-gradient-shift"></div>
+      {/* Animated 3D Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-amber-950 to-orange-950">
+        {/* Animated gradient mesh */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,rgba(251,191,36,0.3),transparent_50%)] animate-pulse-slow"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.25),transparent_50%)] animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-0 left-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,rgba(234,88,12,0.2),transparent_50%)] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        </div>
 
-      {/* Animated Background Blobs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-amber-600/20 to-yellow-700/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-blob"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-yellow-600/20 to-amber-700/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-orange-600/20 to-yellow-600/20 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+        {/* 3D Floating Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-full blur-3xl animate-float-3d"></div>
+          <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-br from-yellow-500/15 to-amber-500/15 rounded-full blur-3xl animate-float-3d" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-float-3d" style={{ animationDelay: '4s', animationDuration: '25s' }}></div>
+        </div>
 
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-amber-500/60 rounded-full animate-float"></div>
-        <div className="absolute top-3/4 left-3/4 w-3 h-3 bg-orange-500/60 rounded-full animate-float animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-yellow-500/60 rounded-full animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-amber-600/60 rounded-full animate-float animation-delay-3000"></div>
+        {/* Geometric Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(251,191,36,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(251,191,36,0.05)_1px,transparent_1px)] bg-[size:80px_80px] animate-grid-move"></div>
+
+        {/* Diagonal Light Streaks */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-amber-400/30 to-transparent transform -skew-x-12 animate-streak"></div>
+          <div className="absolute top-0 left-1/3 w-1 h-full bg-gradient-to-b from-transparent via-orange-400/20 to-transparent transform -skew-x-12 animate-streak" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-transparent via-yellow-400/25 to-transparent transform -skew-x-12 animate-streak" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        {/* Particle Effect */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-amber-400/60 rounded-full animate-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${10 + Math.random() * 10}s`,
+              }}
+            ></div>
+          ))}
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl w-full">
@@ -151,50 +178,77 @@ export default function InfiniteMovingCardsDemo() {
       </div>
 
       <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.05); }
         }
         
-        @keyframes blob {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
+        @keyframes float-3d {
+          0%, 100% { 
+            transform: translate3d(0, 0, 0) rotate(0deg);
+          }
+          33% { 
+            transform: translate3d(30px, -30px, 20px) rotate(120deg);
+          }
+          66% { 
+            transform: translate3d(-20px, 20px, -20px) rotate(240deg);
+          }
         }
         
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+        @keyframes grid-move {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(80px, 80px); }
+        }
+        
+        @keyframes streak {
+          0% { transform: translateX(-100vw) skewX(-12deg); opacity: 0; }
           50% { opacity: 1; }
-          100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+          100% { transform: translateX(100vw) skewX(-12deg); opacity: 0; }
         }
         
-        .animate-gradient-shift {
-          background-size: 200% 200%;
-          animation: gradient-shift 15s ease infinite;
+        @keyframes particle {
+          0% { transform: translate(0, 0) scale(0); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translate(50px, -100px) scale(1); opacity: 0; }
         }
         
-        .animate-blob {
-          animation: blob 7s infinite;
+        .animate-pulse-slow {
+          animation: pulse-slow 8s ease-in-out infinite;
         }
         
-        .animate-float {
-          animation: float 8s infinite;
+        .animate-float-3d {
+          animation: float-3d 15s ease-in-out infinite;
         }
         
-        .animation-delay-1000 {
-          animation-delay: 1s;
+        .animate-grid-move {
+          animation: grid-move 20s linear infinite;
         }
         
-        .animation-delay-2000 {
-          animation-delay: 2s;
+        .animate-streak {
+          animation: streak 8s linear infinite;
         }
         
-        .animation-delay-3000 {
-          animation-delay: 3s;
+        .animate-particle {
+          animation: particle linear infinite;
         }
         
-        .animation-delay-4000 {
-          animation-delay: 4s;
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll linear infinite;
+          width: max-content;
+        }
+
+        /* Added pause-animation class to stop animation on hover */
+        .pause-animation {
+          animation-play-state: paused;
         }
       `}</style>
     </div>
