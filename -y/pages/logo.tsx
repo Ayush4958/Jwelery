@@ -42,7 +42,7 @@ export default function Jewelry3DLogo() {
       {/* Main Logo SVG with 3D Transform */}
       <svg
         width="350"
-        height="300"
+        height="350"
         viewBox="0 0 200 200"
         className={`relative z-10 transition-all duration-700 ${
           isHovered 
@@ -175,20 +175,16 @@ export default function Jewelry3DLogo() {
         </defs>
       </svg>
 
-      {/* Orbiting particles */}
-      {isHovered && (
-        <>
-          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-amber-300 rounded-full animate-orbit-1" 
-            style={{ marginLeft: '-4px', marginTop: '-4px' }}
-          ></div>
-          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-300 rounded-full animate-orbit-2" 
-            style={{ marginLeft: '-4px', marginTop: '-4px' }}
-          ></div>
-          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-orange-300 rounded-full animate-orbit-3" 
-            style={{ marginLeft: '-4px', marginTop: '-4px' }}
-          ></div>
-        </>
-      )}
+      {/* Orbiting particles - Always visible */}
+      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-amber-300 rounded-full animate-orbit-1" 
+        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      ></div>
+      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-300 rounded-full animate-orbit-2" 
+        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      ></div>
+      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-orange-300 rounded-full animate-orbit-3" 
+        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      ></div>
 
       <style jsx>{`
         @keyframes spin-slow {
@@ -212,18 +208,18 @@ export default function Jewelry3DLogo() {
         }
 
         @keyframes orbit-1 {
-          0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+          0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
         }
 
         @keyframes orbit-2 {
-          0% { transform: rotate(120deg) translateX(80px) rotate(-120deg); }
-          100% { transform: rotate(480deg) translateX(80px) rotate(-480deg); }
+          0% { transform: rotate(120deg) translateX(100px) rotate(-120deg); }
+          100% { transform: rotate(480deg) translateX(100px) rotate(-480deg); }
         }
 
         @keyframes orbit-3 {
-          0% { transform: rotate(240deg) translateX(80px) rotate(-240deg); }
-          100% { transform: rotate(600deg) translateX(80px) rotate(-600deg); }
+          0% { transform: rotate(240deg) translateX(100px) rotate(-240deg); }
+          100% { transform: rotate(600deg) translateX(100px) rotate(-600deg); }
         }
 
         .animate-spin-slow {
@@ -244,15 +240,15 @@ export default function Jewelry3DLogo() {
         }
 
         .animate-orbit-1 {
-          animation: orbit-1 3s linear infinite;
+          animation: orbit-1 4s linear infinite;
         }
 
         .animate-orbit-2 {
-          animation: orbit-2 3s linear infinite;
+          animation: orbit-2 4s linear infinite;
         }
 
         .animate-orbit-3 {
-          animation: orbit-3 3s linear infinite;
+          animation: orbit-3 4s linear infinite;
         }
       `}</style>
     </div>
