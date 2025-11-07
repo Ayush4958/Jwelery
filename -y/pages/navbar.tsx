@@ -23,9 +23,8 @@ export default function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
 
-          <MenuItem setActive={setActive} active={active} item="Collections" />
 
-          <MenuItem setActive={setActive} active={active} item="Featured">
+          <MenuItem setActive={setActive} active={active} item="Collections">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="💎Necklace"
@@ -53,6 +52,8 @@ export default function Navbar({ className }: { className?: string }) {
               />
             </div>
           </MenuItem>
+
+          <MenuItem setActive={setActive} active={active} item="Shop" />
 
           <MenuItem setActive={setActive} active={active} item="Services">
             <div className="flex flex-col space-y-4 text-sm">
