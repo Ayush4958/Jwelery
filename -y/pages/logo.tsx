@@ -1,13 +1,23 @@
 "use client"
 import { useState } from "react"
 
-export default function Jewelry3DLogo() {
+interface Jewelry3DLogoProps {
+  width?: number
+  height?: number
+}
+
+export default function Jewelry3DLogo({ width = 350, height = 350 }: Jewelry3DLogoProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  // Calculate orbit radius based on logo size
+  const orbitRadius = Math.min(width, height) * 0.28
+
   return (
-    <div className="relative inline-block cursor-pointer"
+    <div 
+      className="relative inline-block cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ width: `${width}px`, height: `${height}px` }}
     >
       {/* Outer Glow Effect */}
       <div className={`absolute inset-0 rounded-full transition-all duration-700 ${
@@ -41,8 +51,8 @@ export default function Jewelry3DLogo() {
 
       {/* Main Logo SVG with 3D Transform */}
       <svg
-        width="350"
-        height="350"
+        width={width}
+        height={height}
         viewBox="0 0 200 200"
         className={`relative z-10 transition-all duration-700 ${
           isHovered 
@@ -175,15 +185,33 @@ export default function Jewelry3DLogo() {
         </defs>
       </svg>
 
-      {/* Orbiting particles - Always visible */}
-      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-amber-300 rounded-full animate-orbit-1" 
-        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      {/* Orbiting particles - Always visible with dynamic radius */}
+      <div 
+        className="absolute top-1/2 left-1/2 w-2 h-2 bg-amber-300 rounded-full" 
+        style={{ 
+          marginLeft: '-4px', 
+          marginTop: '-4px',
+          animation: `orbit-1 4s linear infinite`,
+          '--orbit-radius': `${orbitRadius}px`
+        } as React.CSSProperties & { '--orbit-radius': string }}
       ></div>
-      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-300 rounded-full animate-orbit-2" 
-        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      <div 
+        className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-300 rounded-full" 
+        style={{ 
+          marginLeft: '-4px', 
+          marginTop: '-4px',
+          animation: `orbit-2 4s linear infinite`,
+          '--orbit-radius': `${orbitRadius}px`
+        } as React.CSSProperties & { '--orbit-radius': string }}
       ></div>
-      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-orange-300 rounded-full animate-orbit-3" 
-        style={{ marginLeft: '-4px', marginTop: '-4px' }}
+      <div 
+        className="absolute top-1/2 left-1/2 w-2 h-2 bg-orange-300 rounded-full" 
+        style={{ 
+          marginLeft: '-4px', 
+          marginTop: '-4px',
+          animation: `orbit-3 4s linear infinite`,
+          '--orbit-radius': `${orbitRadius}px`
+        } as React.CSSProperties & { '--orbit-radius': string }}
       ></div>
 
       <style jsx>{`
@@ -208,18 +236,18 @@ export default function Jewelry3DLogo() {
         }
 
         @keyframes orbit-1 {
-          0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+          0% { transform: rotate(0deg) translateX(${orbitRadius}px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(${orbitRadius}px) rotate(-360deg); }
         }
 
         @keyframes orbit-2 {
-          0% { transform: rotate(120deg) translateX(100px) rotate(-120deg); }
-          100% { transform: rotate(480deg) translateX(100px) rotate(-480deg); }
+          0% { transform: rotate(120deg) translateX(${orbitRadius}px) rotate(-120deg); }
+          100% { transform: rotate(480deg) translateX(${orbitRadius}px) rotate(-480deg); }
         }
 
         @keyframes orbit-3 {
-          0% { transform: rotate(240deg) translateX(100px) rotate(-240deg); }
-          100% { transform: rotate(600deg) translateX(100px) rotate(-600deg); }
+          0% { transform: rotate(240deg) translateX(${orbitRadius}px) rotate(-240deg); }
+          100% { transform: rotate(600deg) translateX(${orbitRadius}px) rotate(-600deg); }
         }
 
         .animate-spin-slow {
@@ -237,18 +265,6 @@ export default function Jewelry3DLogo() {
         .animate-sparkle-rotate {
           animation: sparkle-rotate 3s linear infinite;
           transform-origin: center;
-        }
-
-        .animate-orbit-1 {
-          animation: orbit-1 4s linear infinite;
-        }
-
-        .animate-orbit-2 {
-          animation: orbit-2 4s linear infinite;
-        }
-
-        .animate-orbit-3 {
-          animation: orbit-3 4s linear infinite;
         }
       `}</style>
     </div>
