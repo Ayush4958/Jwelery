@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
 import { cn } from "@/lib/utils"
 import { MenuIcon, X } from "lucide-react"
+import Jewelry3DLogo from './logo'
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null)
@@ -66,9 +67,14 @@ export default function Navbar({ className }: { className?: string }) {
         </Menu>
       </div>
 
+      {/* Mobile Navigation */}
       <div className="md:hidden bg-amber-50 dark:bg-amber-950 border-b border-amber-200 dark:border-amber-700">
-        <div className="flex items-center justify-between px-4 py-4">
-          <h1 className="text-xl font-bold text-amber-900 dark:text-amber-100">Jewelry</h1>
+        <div className="flex items-center justify-between px-4 py-2">
+          {/* 3D Logo replacing "Jewelry" text */}
+          <div className="flex items-center -ml-2">
+            <Jewelry3DLogo width={80} height={80} />
+          </div>
+          
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-amber-900 dark:text-amber-100 p-2"
