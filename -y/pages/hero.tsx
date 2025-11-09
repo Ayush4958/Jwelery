@@ -32,7 +32,7 @@ export default function Hero() {
 
         {/* Right Side - Logo (moved closer to content) */}
         <div className="hidden lg:flex items-center justify-start z-10 ml-0 mr-19">
-          <Jewelry3DLogo />
+          <Jewelry3DLogo width={350} height={300} />
         </div>
       </div>
 
