@@ -12,10 +12,10 @@ export default function Navbar({ className }: { className?: string }) {
 
   return (
     <div className={cn("fixed text-xl font-bold top-0 inset-x-0 z-50 md:top-10", className)}>
+      {/* Desktop Navigation - Centered */}
       <div className="hidden md:flex justify-center px-12">
         <Menu setActive={setActive}>
-
-             <MenuItem setActive={setActive} active={active} item="About">
+          <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/about">Our Story</HoveredLink>
               <HoveredLink href="/craftsmanship">Craftsmanship</HoveredLink>
@@ -23,7 +23,6 @@ export default function Navbar({ className }: { className?: string }) {
               <HoveredLink href="/contact">Contact Us</HoveredLink>
             </div>
           </MenuItem>
-
 
           <MenuItem setActive={setActive} active={active} item="Collections">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
@@ -48,7 +47,7 @@ export default function Navbar({ className }: { className?: string }) {
               <ProductItem
                 title="🪶 Bracelet"
                 href="/bracelets/luxury"
-                src= '/bracelet.png'
+                src='/bracelet.png'
                 description="Wrap your wrist in sophistication — simplicity that speaks volumes"
               />
             </div>
@@ -67,10 +66,10 @@ export default function Navbar({ className }: { className?: string }) {
         </Menu>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Keep logo here */}
       <div className="md:hidden bg-amber-50 dark:bg-amber-950 border-b border-amber-200 dark:border-amber-700">
         <div className="flex items-center justify-between px-4 py-2">
-          {/* 3D Logo replacing "Jewelry" text */}
+          {/* 3D Logo - Mobile only */}
           <div className="flex items-center -ml-2">
             <Jewelry3DLogo width={80} height={80} />
           </div>
