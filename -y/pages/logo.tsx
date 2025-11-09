@@ -1,4 +1,13 @@
 "use client"
+
+{/* <svg
+  width={width}
+  height={height}
+  // viewBox="0 0 200 200"
+  className={`absolute top-0 left-0 transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}` } > </svg> */}
+{/* Main Logo SVG with 3D Transform */}
+
+
 import { useState } from "react"
 
 interface Jewelry3DLogoProps {
@@ -17,7 +26,12 @@ export default function Jewelry3DLogo({ width = 350, height = 350 }: Jewelry3DLo
       className="relative inline-block cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ width: `${width}px`, height: `${height}px` }}
+      style={{ 
+        width: `${width}px`, 
+        height: `${height}px`,
+        position: 'relative',
+        zIndex: 1
+      }}
     >
       {/* Outer Glow Effect */}
       <div className={`absolute inset-0 rounded-full transition-all duration-700 ${
@@ -54,7 +68,7 @@ export default function Jewelry3DLogo({ width = 350, height = 350 }: Jewelry3DLo
         width={width}
         height={height}
         viewBox="0 0 200 200"
-        className={`relative z-10 transition-all duration-700 ${
+        className={`absolute top-0 left-0 transition-all duration-700 ${
           isHovered 
             ? 'scale-110' 
             : 'scale-100'
@@ -67,6 +81,8 @@ export default function Jewelry3DLogo({ width = 350, height = 350 }: Jewelry3DLo
             ? 'perspective(1000px) rotateX(15deg) rotateY(15deg)' 
             : 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
           transformStyle: 'preserve-3d',
+          zIndex: 10,
+          position: 'absolute'
         }}
       >
         {/* Diamond Shape that morphs on hover */}
