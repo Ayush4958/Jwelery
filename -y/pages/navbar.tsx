@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
 import { cn } from "@/lib/utils"
 import { MenuIcon, X } from "lucide-react"
-import Jewelry3DLogo from './logo'
+import { Jewelry3DLogo } from "./logo"
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null)
@@ -71,7 +71,7 @@ export default function Navbar({ className }: { className?: string }) {
         <div className="flex items-center justify-between px-4 py-2">
           {/* 3D Logo - Mobile only */}
           <div className="flex items-center -ml-2">
-            <Jewelry3DLogo width={80} height={80} />
+           <Jewelry3DLogo width={70} height={70} idPrefix="navbar-logo" />
           </div>
           
           <button
@@ -91,16 +91,17 @@ export default function Navbar({ className }: { className?: string }) {
         >
           <div className="px-4 pb-4 space-y-2 border-t border-amber-200 dark:border-amber-700">
             <Menu setActive={setActive} isMobile>
-              <MenuItem setActive={setActive} active={active} item="Collections" isMobile>
+
+              <MenuItem setActive={setActive} active={active} item="About" isMobile>
                 <div className="flex flex-col space-y-2 text-sm">
-                  <HoveredLink href="/rings">Engagement Rings</HoveredLink>
-                  <HoveredLink href="/necklaces">Necklaces & Pendants</HoveredLink>
-                  <HoveredLink href="/bracelets">Bracelets</HoveredLink>
-                  <HoveredLink href="/earrings">Earrings</HoveredLink>
-                  <HoveredLink href="/watches">Luxury Watches</HoveredLink>
+                  <HoveredLink href="/about">Our Story</HoveredLink>
+                  <HoveredLink href="/craftsmanship">Craftsmanship</HoveredLink>
+                  <HoveredLink href="/sustainability">Sustainability</HoveredLink>
+                  <HoveredLink href="/contact">Contact Us</HoveredLink>
                 </div>
               </MenuItem>
-              <MenuItem setActive={setActive} active={active} item="Featured" isMobile>
+
+              <MenuItem setActive={setActive} active={active} item="Collections" isMobile>
                 <div className="text-sm space-y-3">
                   <ProductItem
                     title="Diamond Solitaire"
@@ -116,6 +117,9 @@ export default function Navbar({ className }: { className?: string }) {
                   />
                 </div>
               </MenuItem>
+
+              <MenuItem setActive={setActive} active={active} item="Shop" isMobile />
+
               <MenuItem setActive={setActive} active={active} item="Services" isMobile>
                 <div className="flex flex-col space-y-2 text-sm">
                   <HoveredLink href="/custom-design">Custom Design</HoveredLink>
@@ -124,14 +128,7 @@ export default function Navbar({ className }: { className?: string }) {
                   <HoveredLink href="/resizing">Resizing & Adjustments</HoveredLink>
                 </div>
               </MenuItem>
-              <MenuItem setActive={setActive} active={active} item="About" isMobile>
-                <div className="flex flex-col space-y-2 text-sm">
-                  <HoveredLink href="/about">Our Story</HoveredLink>
-                  <HoveredLink href="/craftsmanship">Craftsmanship</HoveredLink>
-                  <HoveredLink href="/sustainability">Sustainability</HoveredLink>
-                  <HoveredLink href="/contact">Contact Us</HoveredLink>
-                </div>
-              </MenuItem>
+
             </Menu>
           </div>
         </motion.div>

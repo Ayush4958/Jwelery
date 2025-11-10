@@ -2,7 +2,7 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 import HeroButtons from "@/components/ui/hero-button";
 import Feedback from './feedback'
 import Features from './features'
-import Jewelry3DLogo from './logo'
+import { Jewelry3DLogo } from "./logo"
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
         <BackgroundRippleEffect rows={16} />
         
         {/* Left Side - Content */}
-        <div className="max-w-xl mt-18 ml-10 lg:max-w-2xl z-10">
+        <div className="max-w-xl mt-20 lg:max-w-2xl z-10">
           {/* Heading */}
           <h2 className="relative text-left text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-7xl dark:text-neutral-100">
             Jwellery Website <br /> <span className="text-yellow-400"> at your Service </span>
@@ -31,8 +31,8 @@ export default function Hero() {
         </div>
 
         {/* Right Side - Logo (moved closer to content) */}
-        <div className="hidden lg:flex items-center justify-start z-10 ml-0 mr-19">
-          <Jewelry3DLogo width={350} height={300} />
+        <div className="hidden lg:flex items-center justify-start z-10 ml-0 mr-15">
+          <Jewelry3DLogo />
         </div>
       </div>
 
