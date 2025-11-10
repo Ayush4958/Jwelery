@@ -6,14 +6,14 @@ export default function HeroButtons() {
     <div className="flex flex-col z-10 sm:flex-row items-center justify-items-start gap-4 sm:gap-6">
         {/* Primary Button - Explore Collection with Gradient & Glow */}
         <button
-          className="group relative px-10 py-4 font-semibold text-lg text-white bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.6),0_0_60px_rgba(245,158,11,0.3)] active:scale-100"
+          className="group relative px-10 py-4 font-semibold text-lg text-white bg-linear-to-r from-amber-600 via-yellow-600 to-orange-600 rounded-xl overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.6),0_0_60px_rgba(245,158,11,0.3)] active:scale-100"
           aria-label="Explore Collection"
         >
           {/* Animated shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 group-hover:animate-[shimmer_1.5s_ease-in-out] translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 group-hover:animate-[shimmer_1.5s_ease-in-out] translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000"></div>
           
           {/* Glow effect background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-amber-400 via-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
           
           <span className="relative z-10 flex items-center gap-2">
             Explore Collection
