@@ -1,8 +1,8 @@
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import HeroButtons from "@/components/ui/hero-button";
-import Feedback from './feedback'
-import Features from './features'
-import { Jewelry3DLogo } from "./logo"
+import Feedback from '../components/feedback'
+import Features from '../components/features'
+import { Jewelry3DLogo } from "../components/logo"
 
 export default function Hero() {
   return (

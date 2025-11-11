@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu"
 import { cn } from "@/lib/utils"
 import { MenuIcon, X } from "lucide-react"
-import { Jewelry3DLogo } from "./logo"
+import { Jewelry3DLogo } from "../components/logo"
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null)
